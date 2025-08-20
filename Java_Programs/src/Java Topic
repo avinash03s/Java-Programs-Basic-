@@ -1,0 +1,19 @@
+1) Create class
+2) Variable(Local,instance/Globale ,static)
+3) Narrowing and widening (Casting)
+4) Method Create and calling using object reference.
+5) Create object and access method (method calling)
+6) Operator (Arithmetic: +, -, *, /, %, ++, --
+             Assignment: =, +=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=, >>>=
+             Relational/Comparison: ==, !=, >, <, >=, <=
+             Logical: &&, ||, !
+             //Ternary/Conditional: ? :
+             Unary: +, -, ++, --, !)
+7) Flow Statement (if, if-else, nested-if, if-else Ladder,switch)
+8) Array syntax(Write)
+9) For loop(90% use)
+11)while loop(10% use)
+12)this keyword (use and flow)
+
+
+

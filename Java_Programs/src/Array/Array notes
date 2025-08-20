@@ -1,0 +1,12 @@
+What are array in java?
+=>
+
+
+
+eg.
+size => 10                              array
+starting point array => 0              formula(size-1)
+ending point array => 9
+
+Why array are started 0?
+=>
