@@ -1,6 +1,6 @@
 package Polymorphism.MethodOverriding;
 
-/*final method cannot be override*/
+/*final method cannot be overridden*/
 
 public class MethodOverridingRule5 {
     final void play(){

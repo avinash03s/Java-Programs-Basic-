@@ -1,6 +1,6 @@
 package Polymorphism.Casting;
 
-
+//in upcasting use parent class reference and create object of child class;
 
 public class ObjectCasting {
     void add(){
