@@ -1,7 +1,9 @@
 package Interfaces;
 
 public interface InterfaceRule3 {
+    public static void main(String[] args) {
 
+    }
 }
 interface Rule{
 
