@@ -5,7 +5,9 @@ public class UserLogin {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         int setId=101;
-        String setPassword="avi@123";
+        char arr[]={'a','v','i','@','1','2','3'};
+        String setPassword=new String(arr);
+        //String setPassword="avi@123";
 
         while (true){
             System.out.println("Enter UserId");
