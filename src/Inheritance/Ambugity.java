@@ -1,6 +1,7 @@
 package Inheritance;
 
-/*class No{
+/*
+class No{
     void run(){
         System.out.println("No.run");
     }
@@ -16,4 +17,5 @@ class YesNo extends No,Yes{
 
 public class Ambugity {
 
-}*/
+}
+*/

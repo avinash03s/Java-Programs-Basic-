@@ -3,7 +3,7 @@ interface Solve{
     void show();
 }
 interface Ambugity extends Solve{
-    void take();
+    void show();
 }
 public class SolveAmbugity implements Solve,Ambugity {
     @Override
@@ -11,14 +11,14 @@ public class SolveAmbugity implements Solve,Ambugity {
         System.out.println("SolveAmbugity.show");
     }
 
-    @Override
+   /* @Override
     public void take() {
         System.out.println("SolveAmbugity.take");
-    }
+    }*/
 
     public static void main(String[] args) {
         SolveAmbugity ob=new SolveAmbugity();
         ob.show();
-        ob.take();
+        //ob.take();
     }
 }
