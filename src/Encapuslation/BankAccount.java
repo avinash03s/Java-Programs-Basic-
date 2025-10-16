@@ -4,6 +4,7 @@ public class BankAccount {
     private String accHolderName;
     private String aadhaarId;
     private double balance;
+    static String bankName="Bank of Maharashtra";
 
     public void setAccHolderName(String accHolderName) {
         this.accHolderName = accHolderName;
@@ -29,6 +30,7 @@ public class BankAccount {
 class AccountHolder extends BankAccount{
     public static void main(String[] args) {
         AccountHolder ob1= new AccountHolder();
+        System.out.println("Bank Name: "+BankAccount.bankName);
         ob1.setAccHolderName("Avinash");
         ob1.setAadhaarId("7777 2757 2765");
         ob1.setBalance(375894.0);
@@ -38,6 +40,7 @@ class AccountHolder extends BankAccount{
         System.out.println("-------------------------------------------------------------------");
         //2
         AccountHolder ob2= new AccountHolder();
+        System.out.println("Bank Name: "+BankAccount.bankName);
         ob2.setAccHolderName("Rohit Sharma");
         ob2.setAadhaarId("2737 3765 8263");
         ob2.setBalance(363527.0);
@@ -47,6 +50,7 @@ class AccountHolder extends BankAccount{
         System.out.println("-------------------------------------------------------------------");
         //3
         AccountHolder ob3= new AccountHolder();
+        System.out.println("Bank Name: "+BankAccount.bankName);
         ob3.setAccHolderName("MS Dhoni");
         ob3.setAadhaarId("3765 3664 8274");
         ob3.setBalance(38647.0);
@@ -57,6 +61,7 @@ class AccountHolder extends BankAccount{
         System.out.println("-------------------------------------------------------------------");
         //4
         AccountHolder ob4= new AccountHolder();
+        System.out.println("Bank Name: "+BankAccount.bankName);
         ob4.setAccHolderName("KL Rahul");
         ob4.setAadhaarId("2837 3627 8273");
         ob4.setBalance(10000.0);
@@ -67,9 +72,10 @@ class AccountHolder extends BankAccount{
         System.out.println("-------------------------------------------------------------------");
         //5
         AccountHolder ob5= new AccountHolder();
-        ob5.setAccHolderName("Surya");
+        System.out.println("Bank Name: "+BankAccount.bankName);
+        ob5.setAccHolderName("Prashant Sir");
         ob5.setAadhaarId("0983 2873 8374");
-        ob5.setBalance(40000.0);
+        ob5.setBalance(194838543.0);
         ob5.getAccHolderName();
         ob5.getAadhaarID();
         ob5.getBalance();
@@ -77,7 +83,8 @@ class AccountHolder extends BankAccount{
         System.out.println("-------------------------------------------------------------------");
         //6
         AccountHolder ob6= new AccountHolder();
-        ob6.setAccHolderName("Virat");
+        System.out.println("Bank Name: "+BankAccount.bankName);
+        ob6.setAccHolderName(" ");
         ob6.setAadhaarId("2098 2873 8273");
         ob6.setBalance(363527.0);
         ob6.getAccHolderName();
@@ -87,6 +94,7 @@ class AccountHolder extends BankAccount{
         System.out.println("-------------------------------------------------------------------");
         //7
         AccountHolder ob7= new AccountHolder();
+        System.out.println("Bank Name: "+BankAccount.bankName);
         ob7.setAccHolderName("Rohit");
         ob7.setAadhaarId("1009 8298 9827");
         ob7.setBalance(8788.9);
@@ -97,6 +105,7 @@ class AccountHolder extends BankAccount{
         System.out.println("-------------------------------------------------------------------");
         //8
         AccountHolder ob8= new AccountHolder();
+        System.out.println("Bank Name: "+BankAccount.bankName);
         ob8.setAccHolderName("Rahul");
         ob8.setAadhaarId("3874 3874 2763");
         ob8.setBalance(38744.0);
@@ -107,6 +116,7 @@ class AccountHolder extends BankAccount{
         System.out.println("-------------------------------------------------------------------");
         //9
         AccountHolder ob9= new AccountHolder();
+        System.out.println("Bank Name: "+BankAccount.bankName);
         ob9.setAccHolderName("Karan");
         ob9.setAadhaarId("9722 9717 9122");
         ob9.setBalance(10000.0);
@@ -117,7 +127,8 @@ class AccountHolder extends BankAccount{
         System.out.println("-------------------------------------------------------------------");
         //10
         AccountHolder ob10= new AccountHolder();
-        ob10.setAccHolderName("Rama");
+        System.out.println("Bank Name: "+BankAccount.bankName);
+        ob10.setAccHolderName(" ");
         ob10.setAadhaarId("2837 3863 3636");
         ob10.setBalance(88444.0);
         ob10.getAccHolderName();
