@@ -32,13 +32,20 @@ class Person{
 }
 class Main{
     public static void main(String[] args) {
-
         Address ob=new Address("MH23","Beed","Maharashtra","431122");
-       /* ob.getAddress();*/
         Person ob1= new Person("Avinash Surwase \n",ob);
-        System.out.println(ob1.getPerson());
-
-
-
+        int id=101;
+        Scanner sc=new Scanner(System.in);
+        while (true) {
+            System.out.println("Enter Id Number: ");
+            int enterId = sc.nextInt();
+            if (enterId == id) {
+                System.out.println(ob1.getPerson());
+                System.exit(0);
+            } else {
+                System.out.println("Invalid Id...");
+                System.out.println("--------------------");
+            }
+        }
     }
 }
