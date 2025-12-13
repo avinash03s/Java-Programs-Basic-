@@ -1,0 +1,6 @@
+       throws                                    throw
+1)throws declare with method               1)throw write inside the method body.
+signature.
+2)with throws keyword possible             2)in case of throw only one Exception class declare are
+to write multiple Exception classes.         possible.
+3)No create new object .                   3) create new object
