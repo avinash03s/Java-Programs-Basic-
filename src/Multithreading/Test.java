@@ -1,4 +1,5 @@
 package Multithreading;
 
-public class Test {
+public class Test extends Thread{
+
 }
