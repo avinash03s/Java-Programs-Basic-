@@ -1,0 +1,8 @@
+Thread Class                                    vs             Runnable Interface
+
+*1)In case of Thread class When we                     *1)In case of implements Runnable not give Thread or Thread obj directly to
+extends Thread Class we get directly                   start Thread, we need to create Thread Constructor and then
+Thread or Thread Object;                                pass the Runnable reference in to the Thread Constructor. and then
+                                                        give Thread after calling start();
+
+2)Not Possible                                          2)Possible to implements more interfaces;
