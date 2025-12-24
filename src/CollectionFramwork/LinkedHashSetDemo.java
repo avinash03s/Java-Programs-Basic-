@@ -6,8 +6,8 @@ public class LinkedHashSetDemo {
 
     public static void main(String[] args) {
         LinkedHashSet<Object> h = new LinkedHashSet<>();
-        h.add("A");
         h.add("B");
+        h.add("A");
         h.add("C");
         h.add("D");
         h.add(null);
