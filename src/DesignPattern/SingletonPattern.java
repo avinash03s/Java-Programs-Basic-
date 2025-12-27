@@ -20,21 +20,25 @@ public class SingletonPattern {
         }
         return singletonPattern;
     }
+
+    void getConnection(){
+        System.out.println("You are now connected to the database.");
+    }
+
 }
 
 class Main {
 
     public static void main(String[] args) {
         SingletonPattern singletonPattern = SingletonPattern.getSingletonPattern();
-        System.out.println(singletonPattern.hashCode());
+        singletonPattern.getConnection();
 
-        SingletonPattern singletonPattern1 = SingletonPattern.getSingletonPattern();
-        System.out.println(singletonPattern1.hashCode());
-
-        if (singletonPattern.hashCode() == singletonPattern1.hashCode()) {
-            System.out.println(true);
-        } else {
-            System.out.println(false);
-        }
+//        SingletonPattern singletonPattern1 = SingletonPattern.getSingletonPattern();
+//
+//        if (singletonPattern.hashCode() == singletonPattern1.hashCode()) {
+//            System.out.println(true);
+//        } else {
+//            System.out.println(false);
+//        }
     }
 }
