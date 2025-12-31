@@ -1,7 +1,5 @@
 package Multithreading;
 
-package Threading;
-
 import java.util.LinkedList;
 
 public class ProducerConsumer {
