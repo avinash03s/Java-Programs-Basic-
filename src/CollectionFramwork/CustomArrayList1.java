@@ -56,7 +56,24 @@ public class CustomArrayList1<T> {
         return size;
     }
 
+
+    @Override
+    public String toString() {
+        String result = "[";
+
+        for (int i = 0; i < this.size(); i++) {
+            result = result + this.get(i);
+
+            if (i < this.size() - 1) {
+                result = result + " , ";
+            }
+        }
+
+        result = result + "]";
+        return result;
+    }
 }
+
 
 class UseList {
 
@@ -64,7 +81,7 @@ class UseList {
         CustomArrayList1<String> list = new CustomArrayList1<>();
         System.out.println(list.isEmpty());
         System.out.println("Playing 11:😉🏏");
-        list.add(null);
+        list.add("2023 WorldCup");
         list.add("Rohit");
         list.add("Virat");
         list.add("KL Rahul");
@@ -86,5 +103,6 @@ class UseList {
         for (int i = 1; i < list.size(); i++) {
             System.out.println("No: " + i + "=>" + list.get(i));
         }
+        System.out.println(list);
     }
 }
