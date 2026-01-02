@@ -39,18 +39,23 @@ public class CustomArrayList1<T> {
     }
 
     //remove element form list;
-    Object remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException();
-        }
+    Object remove(Object o) {
+        for (int index = 0; index < size; index++) {
+            if (array[index].equals(o)) {
 
-        Object remove = array[index];
-        for (int i = index; i < size - 1; i++) {
-            array[i] = array[i + 1];
+                Object removed = array[index];
+
+                for (int i = index; i < size - 1; i++) {
+                    array[i] = array[i + 1];
+                }
+
+                size--;
+                return removed;
+            }
         }
-        size--;
-        return remove;
+        return null; //  if object not found
     }
+
 
     int size() {
         return size;
@@ -62,14 +67,14 @@ public class CustomArrayList1<T> {
         String result = "[";
 
         for (int i = 0; i < this.size(); i++) {
-            result = result + this.get(i);
+            result += this.get(i);
 
             if (i < this.size() - 1) {
-                result = result + " , ";
+                result += " , ";
             }
         }
 
-        result = result + "]";
+        result += "]";
         return result;
     }
 }
@@ -104,5 +109,6 @@ class UseList {
             System.out.println("No: " + i + "=>" + list.get(i));
         }
         System.out.println(list);
+
     }
 }
