@@ -21,14 +21,39 @@ public class CustomArrayList1<T> {
         array[size++] = t;
     }
 
+    void add(int index, T e) {
+        if (index < 0 || index > size) {
+            throw new IllegalArgumentException("Index : " + index + " is out of Range" + "Size : " + size());
+        }
+        if (size >= array.length) {
+            int newCapacity = (capacity * 3 / 2) + 1;
+            array = Arrays.copyOf(array, newCapacity);
+        }
+        for (int i = size; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = e;
+        size++;
+    }
+
     boolean isEmpty() {
         return size == 0;
     }
 
-    boolean contains(Object ob) {
-        return (boolean) ob;
+    boolean contains(Object o) {
+        for (int i = 0; i < size; i++) {
+            if (o == null) {
+                if (array[i] == null) {
+                    return true;
+                }
+            } else {
+                if (o.equals(array[i])) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
-
 
     //get element form list
     Object get(int index) {
@@ -38,17 +63,14 @@ public class CustomArrayList1<T> {
         return array[index];
     }
 
-    //remove element form list;
+    //remove element form list Object Based;
     Object remove(Object o) {
         for (int index = 0; index < size; index++) {
             if (array[index].equals(o)) {
-
                 Object removed = array[index];
-
                 for (int i = index; i < size - 1; i++) {
                     array[i] = array[i + 1];
                 }
-
                 size--;
                 return removed;
             }
@@ -56,59 +78,48 @@ public class CustomArrayList1<T> {
         return null; //  if object not found
     }
 
+    //index based remove
+    Object remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Object remove = array[index];
+        for (int i = index; i < size - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        size--;
+        return remove;
+    }
+
 
     int size() {
         return size;
+    }
+
+    public int getIndexOf(T e) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(e))
+                return i;
+        }
+        return -1;
+    }
+
+    public Object[] toArray() {
+        return Arrays.copyOf(array, size);
     }
 
 
     @Override
     public String toString() {
         String result = "[";
-
         for (int i = 0; i < this.size(); i++) {
             result += this.get(i);
-
             if (i < this.size() - 1) {
                 result += " , ";
             }
         }
-
         result += "]";
         return result;
     }
 }
 
-
-class UseList {
-
-    public static void main(String[] args) {
-        CustomArrayList1<String> list = new CustomArrayList1<>();
-        System.out.println(list.isEmpty());
-        System.out.println("Playing 11:😉🏏");
-        list.add("2023 WorldCup");
-        list.add("Rohit");
-        list.add("Virat");
-        list.add("KL Rahul");
-        list.add("SKY");
-        list.add("Hardik");
-        list.add("A Patel");
-        list.add("R Jadeja");
-        list.add("Kuldeep");
-        list.add("J Bumrah");
-        list.add("M Siraj");
-        list.add("M Shami");
-
-//        System.out.println(list.size());
-//        list.add("Java");
-//        System.out.println(list.get(0));
-//        list.remove(1);
-
-
-        for (int i = 1; i < list.size(); i++) {
-            System.out.println("No: " + i + "=>" + list.get(i));
-        }
-        System.out.println(list);
-
-    }
-}
