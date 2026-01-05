@@ -1,4 +1,4 @@
-package CollectionFramwork;
+package CollectionFramwork.myOwnClasses;
 
 import java.util.Arrays;
 
