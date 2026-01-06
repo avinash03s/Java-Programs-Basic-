@@ -5,7 +5,7 @@ public class CustomException extends RuntimeException {
         super();
     }
 
-    CustomException(String msg) {
+    public CustomException(String msg) {
         super(msg);
     }
 }

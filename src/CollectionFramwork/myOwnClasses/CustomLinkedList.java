@@ -1,6 +1,11 @@
 package CollectionFramwork.myOwnClasses;
 
 
+import ExceptionHandling.CustomException;
+
+import javax.swing.*;
+import java.util.LinkedList;
+
 public class CustomLinkedList<T> {
     int size = 0;
     Node<T> first;
@@ -22,21 +27,32 @@ public class CustomLinkedList<T> {
         return size;
     }
 
-//    public int get(int index) {
-//        if (index >= 0 && index < size) {
-//            throw new IndexOutOfBoundsException();
-//        }
-//        if (index < (size >> 1)) {
-//            Node<T> a = first;
-//            for (int i = 0; i < index; i++)
-//                a = a.next;
-//        } else {
-//            Node<T> a = last;
-//            for (int i = size - 1; i > index; i--)
-//                a = a.previous;
-//        }
-//        return index;
-//    }
+    T getFirst() {
+        Node<T> f = first;
+        if (f == null) {
+            throw new CustomException("No element");
+        }
+        return f.value;
+    }
+
+    T getLast() {
+        Node<T> l = last;
+        if (l == null) {
+            throw new CustomException("No element");
+        }
+        return l.value;
+    }
+
+    public Object get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node<T> current = first;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.value;
+    }
 
 
     //class
@@ -52,28 +68,37 @@ public class CustomLinkedList<T> {
         }
     }
 
-//    @Override
-//    public String toString() {
-//        StringBuilder result = new StringBuilder("[");
-//        for (int i = 0; i < this.size(); i++) {
-////            result += this.get(i);
-//            if (i < this.size() - 1) {
-//                result.append(" , ");
+//    Object remove(Object o) {
+//        Node<T> a = null;
+//
+//        T value = a.value;
+//        Node<T> next = a.next;
+//        Node<T> previous = a.previous;
+//
+//
+//        if (o == null) {
+//            for (a = first; a != null; a = a.next) {
+//
+//                }
+//            }
+//        } else {
+//            for (a = first; a != null; a = a.next) {
+//                }
 //            }
 //        }
-//        result.append("]");
-//        return result.toString();
+//        return false;
 //    }
-}
 
-class TestOwnLinked {
-
-    public static void main(String[] args) {
-        CustomLinkedList<Integer> list = new CustomLinkedList<>();
-        list.add(10);
-        list.add(20);
-        list.add(30);
-        System.out.println(list);
-
+    @Override
+    public String toString() {
+        String result = "[";
+        for (int i = 0; i < this.size(); i++) {
+            result += this.get(i);
+            if (i < this.size() - 1) {
+                result += " , ";
+            }
+        }
+        result += "]";
+        return result;
     }
 }
