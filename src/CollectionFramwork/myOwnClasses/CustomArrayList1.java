@@ -15,7 +15,7 @@ public class CustomArrayList1<T> {
     //add() used to add element in list;
     void add(T t) {
         if (size == array.length) {
-            int newCapacity = (capacity * 3 / 2) + 1;
+            int newCapacity = capacity + (capacity / 2);
             array = Arrays.copyOf(array, newCapacity);
         }
         array[size++] = t;

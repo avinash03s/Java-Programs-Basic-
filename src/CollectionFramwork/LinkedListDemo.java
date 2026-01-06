@@ -14,6 +14,7 @@ public class LinkedListDemo {
         list.set(0,"Developer");//[Developer,45,null,Java]
         list.add(0,"Python");
         System.out.println(list);
+        System.out.println(list.get(4));
 //        ((LinkedList<Object>) list).removeLast();
 //        ((LinkedList<Object>) list).addFirst("ABC");
 //        System.out.println(list);
