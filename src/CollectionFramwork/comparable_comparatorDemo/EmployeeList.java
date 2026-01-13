@@ -1,9 +1,6 @@
-package CollectionFramwork;
+package CollectionFramwork.comparable_comparatorDemo;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class EmployeeList {
 
@@ -125,10 +122,10 @@ class EmployeeMain {
         EmployeeList emp3 = new EmployeeList(103, 20, "Avinash", "Surwase", "Beed");
         EmployeeList emp4 = new EmployeeList(104, 22, "Tejas", "Gire", "Mumbai");
         EmployeeList emp5 = new EmployeeList(102, 15, "Samarth", "Kalkute", "Pendgav");
-        EmployeeList emp6 = new EmployeeList(107, 15, "Sushil", "Dhage", "Siras");
-        EmployeeList emp7 = new EmployeeList(106, 15, "Avinash", "Kakde", "Jalna");
+        EmployeeList emp6 = new EmployeeList(107, 19, "Sushil", "Dhage", "Siras");
+        EmployeeList emp7 = new EmployeeList(106, 16, "Avinash", "Kakde", "Jalna");
 
-        List<EmployeeList> list = Arrays.asList(emp1, emp2, emp3, emp4, emp5, emp6, emp7);
+        List<EmployeeList> list = new ArrayList<>(Arrays.asList(emp1, emp2, emp3, emp4, emp5, emp6, emp7));
         Collections.sort(list, new SortById());
         System.out.println("Sorted BY Id");
         for (EmployeeList e : list) {
