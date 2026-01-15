@@ -3,6 +3,7 @@ package Java_8_feature.streamOperation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class StudentList {
     private int id;
@@ -76,6 +77,13 @@ class StudentMain {
                 .toList();
         for (StudentList s : sortedList) {
             System.out.println(s);
+        }
+        System.out.println("--------------------");
+        System.out.println("Sorted By RollNo and get only Name");
+        List<String> stringStream = list.stream().filter(x -> x.getRollNo() > 41)
+                .sorted((a,b)->a.getRollNo() - b.getRollNo()).map((a)-> a.getName()).toList();
+        for (String name : stringStream) {
+            System.out.println(name);
         }
     }
 }
