@@ -76,5 +76,6 @@ public class EmployeeMain {
         list.stream().filter(x -> x.getJoiningYear() > 2015)
                 .map(Employee::getName)
                 .forEach(System.out::println);
+
     }
 }
