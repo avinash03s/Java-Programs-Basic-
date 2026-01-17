@@ -44,7 +44,7 @@ public class EmployeeMain {
                 .map(Employee::getDepartment)
                 .distinct()
                 .toList();
-        for (String e : stringStream){
+        for (String e : stringStream) {
             System.out.println(e);
         }
         System.out.println("--------------------------------------------------------------------------");
@@ -62,18 +62,18 @@ public class EmployeeMain {
         Employee employee = collect2.get();
         System.out.println("Details Of Highest Paid Employee : ");
         System.out.println("==================================");
-        System.out.println("ID : "+employee.getId());
-        System.out.println("Name : "+employee.getName());
-        System.out.println("Age : "+employee.getAge());
-        System.out.println("Gender : "+employee.getGender());
-        System.out.println("Department : "+employee.getDepartment());
-        System.out.println("Year Of Joining : "+employee.getJoiningYear());
-        System.out.println("Salary : "+employee.getSalary());
+        System.out.println("ID : " + employee.getId());
+        System.out.println("Name : " + employee.getName());
+        System.out.println("Age : " + employee.getAge());
+        System.out.println("Gender : " + employee.getGender());
+        System.out.println("Department : " + employee.getDepartment());
+        System.out.println("Year Of Joining : " + employee.getJoiningYear());
+        System.out.println("Salary : " + employee.getSalary());
         System.out.println("---------------------------------------------------------------------------------------");
 
         //Get the names of all employees who have joined after 2015?
         System.out.println("---joined after 2015---");
-        list.stream().filter(x->x.getJoiningYear() > 2015)
+        list.stream().filter(x -> x.getJoiningYear() > 2015)
                 .map(Employee::getName)
                 .forEach(System.out::println);
     }
