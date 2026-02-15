@@ -13,5 +13,6 @@ class Main{
     public static void main(String[] args) {
         Demo ob = new Demo();
         ob.play(40,5);
+        System.out.println("Hii......");
     }
 }
