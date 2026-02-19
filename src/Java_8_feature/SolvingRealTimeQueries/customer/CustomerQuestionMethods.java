@@ -3,6 +3,7 @@ package Java_8_feature.SolvingRealTimeQueries.customer;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CustomerQuestionMethods {
 
@@ -75,12 +76,21 @@ public class CustomerQuestionMethods {
                 .filter(c -> c.getProductName().equals("BOAT"))
                 .min((a,b)->a.getAge()-b.getAge());
         System.out.println(min);
+
+//        list.stream().filter(c-> c.getGender().equals("Male"))
+//                .filter(c-> c.getProductName().equals("BOAT"))
+
     }
 
     static void question10(){
         /// Who has the most age (most experience) in the organization?
         List<Customer> list = Customer.getCustomer();
         Optional<Customer> first = list.stream().sorted((a, b) -> b.getAge() - a.getAge()).findFirst();
-        System.out.println(first);
+//        System.out.println(first);
+
+        /// using another method
+        List<Customer> limit = list.stream().sorted((a, b) -> b.getAge() - a.getAge()).limit(1)
+                .toList();
+        System.out.println(limit);
     }
 }
