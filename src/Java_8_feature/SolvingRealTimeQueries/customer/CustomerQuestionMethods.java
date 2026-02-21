@@ -7,28 +7,28 @@ import java.util.stream.Stream;
 
 public class CustomerQuestionMethods {
 
-    static void question1(){
+    static void question1() {
         /// How many male and female Customer are there in the organization?
         List<Customer> list = Customer.getCustomer();
         Map<String, Long> collect = list.stream().collect(Collectors.groupingBy(Customer::getGender, Collectors.counting()));
         System.out.println(collect);
     }
 
-    static void question2(){
+    static void question2() {
         /// Print the name of all Products in the organization?
         List<Customer> list = Customer.getCustomer();
         list.stream().map(Customer::getProductName).distinct().forEach(System.out::println);
     }
 
-    static void question3(){
+    static void question3() {
         ///  What is the average age of male and female Customer?
         List<Customer> list = Customer.getCustomer();
         Map<String, Double> collect = list.stream()
-                .collect(Collectors.groupingBy(Customer::getGender, Collectors.averagingInt(c->c.getAge())));
+                .collect(Collectors.groupingBy(Customer::getGender, Collectors.averagingInt(c -> c.getAge())));
         System.out.println(collect);
     }
 
-    static void question4(){
+    static void question4() {
         /// Get the details of highest age Customer in the organization?
         List<Customer> list = Customer.getCustomer();
         Optional<Customer> collect = list.stream()
@@ -37,44 +37,44 @@ public class CustomerQuestionMethods {
 
     }
 
-    static void question5(){
+    static void question5() {
         ///Get the names of all employees who have joined after 2015?
         List<Customer> list = Customer.getCustomer();
-        list.stream().filter(c->c.getVisitYear() > 2015).map(c->c.getName())
+        list.stream().filter(c -> c.getVisitYear() > 2015).map(c -> c.getName())
                 .forEach(System.out::println);
     }
 
-    static void question6(){
+    static void question6() {
         /// Count the number of Customer of each Product
         List<Customer> list = Customer.getCustomer();
         Map<String, Long> collect = list.stream().collect(Collectors.groupingBy(Customer::getProductName, Collectors.counting()));
-        for (Map.Entry<String ,Long> m : collect.entrySet()){
+        for (Map.Entry<String, Long> m : collect.entrySet()) {
             System.out.println(m);
         }
     }
 
-    static void question7(){
+    static void question7() {
         /// Count the number of employees in each department?
         List<Customer> list = Customer.getCustomer();
         Map<String, Long> collect = list.stream().collect(Collectors.groupingBy(Customer::getName, Collectors.counting()));
-        for (Map.Entry<String ,Long> m: collect.entrySet()){
+        for (Map.Entry<String, Long> m : collect.entrySet()) {
             System.out.println(m);
         }
     }
 
-    static void question8(){
+    static void question8() {
         /// What is the average age of each department?
         List<Customer> list = Customer.getCustomer();
-        Map<String , Double> collect = list.stream().collect(Collectors.groupingBy(Customer::getProductName, Collectors.averagingDouble(Customer::getAge)));
+        Map<String, Double> collect = list.stream().collect(Collectors.groupingBy(Customer::getProductName, Collectors.averagingDouble(Customer::getAge)));
         System.out.println(collect);
     }
 
-    static void question9(){
+    static void question9() {
         /// Get the details of youngest male Customer in the product is BOAT?
         List<Customer> list = Customer.getCustomer();
         Optional<Customer> min = list.stream().filter(c -> c.getGender().equals("Male"))
                 .filter(c -> c.getProductName().equals("BOAT"))
-                .min((a,b)->a.getAge()-b.getAge());
+                .min((a, b) -> a.getAge() - b.getAge());
         System.out.println(min);
 
 //        list.stream().filter(c-> c.getGender().equals("Male"))
@@ -82,7 +82,7 @@ public class CustomerQuestionMethods {
 
     }
 
-    static void question10(){
+    static void question10() {
         /// Who has the most age (most experience) in the organization?
         List<Customer> list = Customer.getCustomer();
         Optional<Customer> first = list.stream().sorted((a, b) -> b.getAge() - a.getAge()).findFirst();
@@ -93,4 +93,20 @@ public class CustomerQuestionMethods {
                 .toList();
         System.out.println(limit);
     }
+
+    static void question11() {
+        /// Who is the oldest employee in the organization? What is his age and which department he belongs to?
+        List<Customer> list = Customer.getCustomer();
+        List<Customer> stringStream = list.stream().sorted((a, b) -> b.getAge() - a.getAge())
+                .limit(1).toList();
+        System.out.println(stringStream);
+    }
+
+    static void question12(){
+        /// List down the names of all Customer by each Product?
+        List<Customer> list = Customer.getCustomer();
+        Map<String, List<Customer>> collect = list.stream().collect(Collectors.groupingBy(Customer::getProductName));
+        System.out.println(collect);
+    }
 }
+
