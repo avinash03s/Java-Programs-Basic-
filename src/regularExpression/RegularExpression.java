@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-class RegularExpression {
+public class RegularExpression {
 
     public static boolean verify(String regex, String check) {
         Pattern compile = Pattern.compile(regex);
