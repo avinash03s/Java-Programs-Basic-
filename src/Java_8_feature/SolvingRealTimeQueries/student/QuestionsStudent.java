@@ -1,4 +1,4 @@
-package Java_8_feature.SolvingRealTimeQueries;
+package Java_8_feature.SolvingRealTimeQueries.student;
 
 import java.util.*;
 import java.util.stream.Collectors;

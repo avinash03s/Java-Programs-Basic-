@@ -1,4 +1,4 @@
-package Java_8_feature.SolvingRealTimeQueries;
+package Java_8_feature.SolvingRealTimeQueries.employee;
 
 public class Employee {
     private int id;
