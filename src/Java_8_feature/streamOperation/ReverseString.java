@@ -1,9 +1,5 @@
 package Java_8_feature.streamOperation;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.stream.Collector;
-
 public class ReverseString {
 
     public static void main(String[] args) {

@@ -102,11 +102,37 @@ public class CustomerQuestionMethods {
         System.out.println(stringStream);
     }
 
-    static void question12(){
+    static void question12() {
         /// List down the names of all Customer by each Product?
         List<Customer> list = Customer.getCustomer();
-        Map<String, List<Customer>> collect = list.stream().collect(Collectors.groupingBy(Customer::getProductName));
+        Map<String, Set<String>> stringStream = list.stream()
+                .collect(Collectors.groupingBy(Customer::getProductName, Collectors.mapping(Customer::getName, Collectors.toSet())));
+        System.out.println(stringStream);
+    }
+
+    static void question13() {
+        List<Customer> list = Customer.getCustomer();
+        Optional<Customer> max = list.stream().max(Comparator.comparingInt(Customer::getAge));
+        max.ifPresent(x-> System.out.println(x.getName()+"-"+x.getAge()));
+    }
+
+    static void question14(){
+        List<Customer> list = Customer.getCustomer();
+        list.stream().sorted((a, b) -> a.getVisitYear() - b.getVisitYear())
+                .forEach(System.out::println); ;
+    }
+
+    static void question15(){
+        /// make id as key and name as value
+        List<Customer> list = Customer.getCustomer();
+        Map<Integer, Set<String>> collect = list.stream()
+                .collect(Collectors.groupingBy(Customer::getId,
+                        Collectors.mapping(Customer::getName, Collectors.toSet())));
         System.out.println(collect);
+        System.out.println("-----------------------------------------------------------------------------------");
+        /// second way - throw exception IllegalStateException(Duplicate key(id) in our list)
+//        Map<Integer, String> collect1 = list.stream()
+//                .collect(Collectors.toMap(Customer::getId, Customer::getName));
+//        System.out.println(collect1);
     }
 }
-

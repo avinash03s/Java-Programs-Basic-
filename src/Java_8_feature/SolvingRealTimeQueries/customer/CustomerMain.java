@@ -26,5 +26,11 @@ public class CustomerMain extends CustomerQuestionMethods{
         question11();
         System.out.println("-----------------------------------------------");
         question12();
+        System.out.println("-----------------------------------------------");
+        question13();
+        System.out.println("-----------------------------------------------");
+//        question14();
+        System.out.println("-----------------------------------------------");
+        question15();
     }
 }
